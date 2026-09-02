@@ -28,7 +28,7 @@ export async function middleware(request: NextRequest) {
   // Protect all admin routes (pages and APIs)
   if (request.nextUrl.pathname.startsWith('/admin')) {
     // Allow login page
-    if (request.nextUrl.pathname === '/admin/login') {
+    if (request.nextUrl.pathname === '/admin/login' || request.nextUrl.pathname === '/admin/login/') {
       return supabaseResponse
     }
 
@@ -54,3 +54,4 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/admin/:path*', '/api/admin/:path*'],
 }
+

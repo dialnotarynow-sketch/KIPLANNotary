@@ -1,6 +1,6 @@
-import { requireAdmin } from '@/lib/admin/auth'
 import { AdminSidebar } from '@/components/admin/AdminSidebar'
 import { AdminHeader } from '@/components/admin/AdminHeader'
+import { getAdminUser } from '@/lib/admin/auth'
 import { redirect } from 'next/navigation'
 
 export default async function AdminLayout({
@@ -8,7 +8,7 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  const admin = await requireAdmin()
+  const admin = await getAdminUser()
 
   if (!admin) {
     redirect('/admin/login')
