@@ -16,3 +16,8 @@
 # misc
 .DS_Store
 *.tsbuildinfo
+
+test-login.ps1
+app/(public)/admin/login/page.tsx.backup
+middleware.ts.backup
+scripts/reset-admin-password.js

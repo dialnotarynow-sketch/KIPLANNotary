@@ -34,14 +34,15 @@ export const knowledgeBase: KnowledgeEntry[] = [
     requiresHumanReview: false,
     isEscalationTrigger: false,
   },
-  {
-    category: 'translation',
+    {
+    category: 'university_translation',
     patterns: [
-      /\b(translat(e|ion|ed|or)|translator)\b/i,
-      /(anubad|अनुवाद|translate garnu|tarjuma)/i,
+      /\b(university|college|admission|enrollment|enrolment|study abroad|higher education|student visa|academic)\b.*\b(translat|document|certificate|transcript|marksheet|degree|diploma)\b/i,
+      /\b(translat|document|certificate|transcript|marksheet|degree|diploma)\b.*\b(university|college|admission|enrollment|enrolment|study abroad|academic)\b/i,
+      /(university ko lagi|university admission|college admission|study abroad|विदेश पढ्न|विश्वविद्यालय|कलेज भर्ना)/i,
     ],
-    answerEn: 'KIPLAN translates and certifies authenticated Nepali and English documents. For other languages, we can assist in finding appropriate resources. What language do you need?',
-    answerNp: 'KIPLAN ले नेपाली र अंग्रेजी कागजातको अनुवाद र प्रमाणीकरण गर्छ। अन्य भाषाको लागि हामी उपयुक्त स्रोत खोज्न सहयोग गर्न सक्छौं। तपाईंलाई कुन भाषा चाहिन्छ?',
+    answerEn: 'For foreign university admission, commonly translated documents may include academic transcripts/marksheets, degree or diploma certificates, character certificates, migration certificates, and other documents requested by the university or relevant authority. The exact requirements vary by institution and country. KIPLAN can review your documents and advise which ones need translation and certification.',
+    answerNp: 'विदेशी विश्वविद्यालयमा भर्नाको लागि सामान्यतया शैक्षिक ट्रान्सक्रिप्ट/मार्कसिट, डिग्री वा डिप्लोमा प्रमाणपत्र, चारित्रिक प्रमाणपत्र, माइग्रेसन प्रमाणपत्र तथा विश्वविद्यालय वा सम्बन्धित निकायले मागेका अन्य कागजातको अनुवाद आवश्यक पर्न सक्छ। आवश्यक कागजात संस्था र देशअनुसार फरक हुन सक्छन्। KIPLAN ले तपाईंका कागजात हेरी कुन कागजात अनुवाद तथा प्रमाणीकरण गर्नुपर्ने हो सल्लाह दिन सक्छ।',
     requiresHumanReview: false,
     isEscalationTrigger: false,
   },
@@ -169,9 +170,9 @@ export const knowledgeBase: KnowledgeEntry[] = [
   {
     category: 'remote_customer',
     patterns: [
-      /\b(outside kathmandu|outside nepal|remote|another city|another district|abroad|foreign)\b/i,
-      /(kathmandu baira|काठमाडौं बाहिर|nepal baira|नेपाल बाहिर|arko jilla|अर्को जिल्ला)/i,
-    ],
+  /\b(outside kathmandu|outside nepal|another city|another district|abroad)\b/i,
+  /(kathmandu baira|काठमाडौं बाहिर|nepal baira|नेपाल बाहिर|arko jilla|अर्को जिल्ला)/i,
+],
     answerEn: 'Whether the service can be completed remotely depends on the nature of the document and the service required. For authenticated Nepali/English document translation, remote submission may be possible. KIPLAN can review your situation.',
     answerNp: 'सेवा दूरस्थ रूपमा पूरा गर्न सकिन्छ वा नभन्ने कागजातको प्रकृति र आवश्यक सेवामा निर्भर गर्छ। प्रमाणित नेपाली/अंग्रेजी कागजात अनुवादको लागि दूरस्थ पेश गर्न सम्भव हुन सक्छ। KIPLAN ले तपाईंको अवस्थाको समीक्षा गर्न सक्छ।',
     requiresHumanReview: false,

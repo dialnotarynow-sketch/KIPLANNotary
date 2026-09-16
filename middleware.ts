@@ -27,8 +27,13 @@ export async function middleware(request: NextRequest) {
 
   // Protect all admin routes (pages and APIs)
   if (request.nextUrl.pathname.startsWith('/admin')) {
-    // Allow login page
-    if (request.nextUrl.pathname === '/admin/login' || request.nextUrl.pathname === '/admin/login/') {
+    // Normalize trailing slashes so "/admin/login/" behaves the same as "/admin/login"
+    const normalizedPath = request.nextUrl.pathname.replace(/\/+$/, '') || '/'
+
+    // Public admin routes: these must remain reachable without a session,
+    // including mid-recovery (a recovery link establishes its own temporary session).
+    const PUBLIC_ADMIN_PATHS = ['/admin/login', '/admin/reset-password']
+    if (PUBLIC_ADMIN_PATHS.includes(normalizedPath)) {
       return supabaseResponse
     }
 
@@ -54,4 +59,3 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/admin/:path*', '/api/admin/:path*'],
 }
-

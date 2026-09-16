@@ -116,31 +116,139 @@ export default function InquiryDetailPage() {
     }
   }
 
-  async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    if (!file || !id) return
+  async function createOrder() {
+  if (!id || !inquiry) return
+  setUpdatingStatus(true)
 
-    setUploading(true)
+  try {
+    const res = await fetch('/api/admin/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        inquiry_id: id,
+        reference_number: inquiry.reference_number,
+        service_type: inquiry.service_type,
+        status: 'pending',
+        payment_status: 'pending',
+      }),
+    })
+
+    const data = await res.json()
+
+    if (!res.ok) {
+      throw new Error(data.error || 'Failed to create order')
+    }
+
+    if (data.existing) {
+      alert('An order already exists for this inquiry.')
+    } else {
+      alert('Order created successfully.')
+    }
+  } catch (e: any) {
+    alert(e.message || 'Failed to create order')
+  } finally {
+    setUpdatingStatus(false)
+  }
+    if (!id || !inquiry) return
+    setUpdatingStatus(true)
+
     try {
-      const formData = new FormData()
-      formData.append('file', file)
-      formData.append('inquiry_id', id)
-
-      const res = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
+      const res = await fetch('/api/admin/inquiries', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id,
+          status: 'in_progress',
+          reason: 'Order created from inquiry detail page',
+        }),
       })
-      if (!res.ok) throw new Error('Upload failed')
 
-      const data = await res.json()
-      setDocuments(prev => [data.document, ...prev])
+      if (!res.ok) {
+        throw new Error('Failed to create order')
+      }
+
+      setInquiry(prev =>
+        prev ? { ...prev, status: 'in_progress' as Inquiry['status'] } : null
+      )
+      setNewStatus('in_progress')
+
+      const historyRes = await fetch(
+        `/api/admin/status-history?inquiry_id=${id}`
+      )
+
+      if (historyRes.ok) {
+        const historyData = await historyRes.json()
+        setStatusHistory(historyData.data || [])
+      }
+
+      alert('Order created successfully.')
     } catch (e: any) {
-      alert(e.message || 'Upload failed')
+      alert(e.message || 'Failed to create order')
     } finally {
-      setUploading(false)
-      e.target.value = ''
+      setUpdatingStatus(false)
     }
   }
+
+  async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
+  const file = e.target.files?.[0]
+  if (!file || !id) return
+
+  setUploading(true)
+  try {
+    const formData = new FormData()
+    formData.append('file', file)
+    formData.append('inquiry_id', id)
+    formData.append('document_role', 'client_document')
+
+    const res = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    })
+
+    if (!res.ok) throw new Error('Upload failed')
+
+    const data = await res.json()
+    setDocuments(prev => [data.document, ...prev])
+  } catch (e: any) {
+    alert(e.message || 'Upload failed')
+  } finally {
+    setUploading(false)
+    e.target.value = ''
+  }
+}
+
+async function handleCertifiedTranslationUpload(
+  e: React.ChangeEvent<HTMLInputElement>
+) {
+  const file = e.target.files?.[0]
+  if (!file || !id) return
+
+  setUploading(true)
+  try {
+    const formData = new FormData()
+    formData.append('file', file)
+    formData.append('inquiry_id', id)
+    formData.append('document_role', 'certified_translation')
+
+    const res = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    })
+
+    if (!res.ok) {
+      const data = await res.json().catch(() => null)
+      throw new Error(data?.error || 'Upload failed')
+    }
+
+    const data = await res.json()
+    setDocuments(prev => [data.document, ...prev])
+  } catch (e: any) {
+    alert(e.message || 'Upload failed')
+  } finally {
+    setUploading(false)
+    e.target.value = ''
+  }
+}
 
   async function downloadDocument(docId: string) {
     try {
@@ -181,6 +289,13 @@ export default function InquiryDetailPage() {
           </p>
         </div>
         <div className="flex items-center gap-2">
+          <button
+            onClick={createOrder}
+            disabled={updatingStatus || inquiry.status === 'in_progress'}
+            className="px-4 py-2 bg-green-600 text-white rounded-md text-sm hover:bg-green-700 disabled:opacity-50"
+          >
+            {updatingStatus ? 'Creating...' : 'Create Order'}
+          </button>
           <select
             value={newStatus}
             onChange={(e) => setNewStatus(e.target.value)}
@@ -297,36 +412,148 @@ export default function InquiryDetailPage() {
         )}
       </div>
 
-      {/* Documents */}
+           {/* Documents */}
       <div className="bg-white rounded-lg shadow p-6">
-        <div className="flex items-center justify-between border-b pb-2 mb-4">
-          <h2 className="text-lg font-semibold">Documents</h2>
-          <label className="cursor-pointer px-4 py-2 bg-gray-800 text-white rounded-md text-sm hover:bg-gray-900 disabled:opacity-50">
-            {uploading ? 'Uploading...' : 'Upload Document'}
-            <input type="file" className="hidden" onChange={handleFileUpload} accept=".pdf,.jpg,.jpeg,.png" disabled={uploading} />
-          </label>
+        <div className="border-b pb-3 mb-5">
+          <h2 className="text-lg font-semibold text-gray-900">Documents</h2>
+          <p className="text-sm text-gray-500 mt-1">
+            Applicant-submitted documents and KIPLAN Admin documents are shown separately.
+          </p>
         </div>
 
-        {documents.length === 0 ? (
-          <p className="text-gray-500 text-sm">No documents uploaded yet.</p>
-        ) : (
-          <div className="space-y-2">
-            {documents.map((doc) => (
-              <div key={doc.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                <div className="text-sm">
-                  <p className="font-medium text-gray-800">{doc.original_name}</p>
-                  <p className="text-gray-500 text-xs">{(doc.file_size / 1024 / 1024).toFixed(2)} MB • {doc.file_type}</p>
-                </div>
-                <button
-                  onClick={() => downloadDocument(doc.id)}
-                  className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
-                >
-                  Download
-                </button>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          {/* Applicant Uploads */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden">
+            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center justify-between">
+              <div>
+                <h3 className="font-semibold text-gray-900">
+                  Applicant Uploads
+                </h3>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  Documents received from the applicant
+                </p>
               </div>
-            ))}
+
+              <label className="cursor-pointer px-3 py-2 bg-gray-800 text-white rounded-md text-xs hover:bg-gray-900">
+                {uploading ? 'Uploading...' : 'Upload Document'}
+                <input
+                  type="file"
+                  className="hidden"
+                  onChange={handleFileUpload}
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  disabled={uploading}
+                />
+              </label>
+            </div>
+
+            <div className="p-4">
+              {documents.filter(
+                doc => doc.document_role === 'client_document'
+              ).length === 0 ? (
+                <p className="text-gray-500 text-sm text-center py-6">
+                  No applicant documents uploaded yet.
+                </p>
+              ) : (
+                <div className="space-y-3">
+                  {documents
+                    .filter(doc => doc.document_role === 'client_document')
+                    .map((doc) => (
+                      <div
+                        key={doc.id}
+                        className="flex items-center justify-between gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100"
+                      >
+                        <div className="min-w-0">
+                          <p className="font-medium text-gray-800 text-sm truncate">
+                            {doc.original_name}
+                          </p>
+                          <p className="text-gray-500 text-xs mt-1">
+                            {(doc.file_size / 1024 / 1024).toFixed(2)} MB
+                            {' • '}
+                            {doc.file_type}
+                          </p>
+                        </div>
+
+                        <button
+                          onClick={() => downloadDocument(doc.id)}
+                          className="shrink-0 px-3 py-1.5 bg-blue-600 text-white text-xs rounded hover:bg-blue-700"
+                        >
+                          Download
+                        </button>
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
           </div>
-        )}
+
+          {/* KIPLAN Admin Uploads */}
+          <div className="border border-green-200 rounded-lg overflow-hidden">
+            <div className="bg-green-50 px-4 py-3 border-b border-green-200 flex items-center justify-between">
+              <div>
+                <h3 className="font-semibold text-gray-900">
+                  KIPLAN Admin Uploads
+                </h3>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  Documents prepared by KIPLAN Notary
+                </p>
+              </div>
+
+              <label className="cursor-pointer px-3 py-2 bg-green-600 text-white rounded-md text-xs hover:bg-green-700">
+                {uploading ? 'Uploading...' : 'Upload Certified Translation'}
+                <input
+                  type="file"
+                  className="hidden"
+                  onChange={handleCertifiedTranslationUpload}
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  disabled={uploading}
+                />
+              </label>
+            </div>
+
+            <div className="p-4">
+              {documents.filter(
+                doc => doc.document_role === 'certified_translation'
+              ).length === 0 ? (
+                <p className="text-gray-500 text-sm text-center py-6">
+                  No KIPLAN Admin documents uploaded yet.
+                </p>
+              ) : (
+                <div className="space-y-3">
+                  {documents
+                    .filter(
+                      doc => doc.document_role === 'certified_translation'
+                    )
+                    .map((doc) => (
+                      <div
+                        key={doc.id}
+                        className="flex items-center justify-between gap-3 p-3 bg-green-50 rounded-lg border border-green-100"
+                      >
+                        <div className="min-w-0">
+                          <p className="font-medium text-gray-800 text-sm truncate">
+                            {doc.original_name}
+                          </p>
+                          <p className="text-gray-500 text-xs mt-1">
+                            {(doc.file_size / 1024 / 1024).toFixed(2)} MB
+                            {' • '}
+                            {doc.file_type}
+                          </p>
+                        </div>
+
+                        <button
+                          onClick={() => downloadDocument(doc.id)}
+                          className="shrink-0 px-3 py-1.5 bg-blue-600 text-white text-xs rounded hover:bg-blue-700"
+                        >
+                          Download
+                        </button>
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+        </div>
       </div>
 
       {/* Admin Notes */}

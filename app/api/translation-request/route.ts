@@ -48,7 +48,13 @@ export async function POST(req: NextRequest) {
       customer_email: email,
     }).select('id, reference_number').single()
 
-    if (error) throw error
+   if (error) {
+  console.error('INQUIRY INSERT ERROR:', error)
+  return NextResponse.json(
+    { error: error.message, details: error.details, hint: error.hint },
+    { status: 500 }
+  )
+}
 
     return NextResponse.json({
       success: true,

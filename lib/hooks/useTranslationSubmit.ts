@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export function useTranslationSubmit() {
   const [submitting, setSubmitting] = useState(false)
-  const [result, setResult] = useState<{ success: boolean; referenceNumber?: string; message?: string; error?: string } | null>(null)
+  const [result, setResult] = useState<{ success: boolean; referenceNumber?: string; inquiryId?: string; message?: string; error?: string } | null>(null)
 
   async function submit(data: {
     name: string
@@ -27,9 +27,13 @@ export function useTranslationSubmit() {
       })
       const json = await res.json()
       if (!res.ok) throw new Error(json.error || 'Submission failed')
-      setResult({ success: true, referenceNumber: json.referenceNumber, message: json.message })
+      const successResult = { success: true as const, referenceNumber: json.referenceNumber, inquiryId: json.inquiryId, message: json.message }
+      setResult(successResult)
+      return successResult
     } catch (e: any) {
-      setResult({ success: false, error: e.message || 'Something went wrong' })
+      const failureResult = { success: false as const, error: e.message || 'Something went wrong' }
+      setResult(failureResult)
+      return failureResult
     } finally {
       setSubmitting(false)
     }

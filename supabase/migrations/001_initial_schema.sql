@@ -149,7 +149,8 @@ CREATE TABLE IF NOT EXISTS documents (
   file_size INTEGER NOT NULL,
   storage_path TEXT NOT NULL,
   uploaded_by UUID REFERENCES admins(id) ON DELETE SET NULL,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+document_role TEXT NOT NULL DEFAULT 'client_document',
+created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
 -- ============================================

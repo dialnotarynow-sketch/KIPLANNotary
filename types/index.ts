@@ -129,6 +129,7 @@ export interface Document {
   file_size: number
   storage_path: string
   uploaded_by?: string
+  document_role: string
   created_at: string
 }
 

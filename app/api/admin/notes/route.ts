@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
     const { data, error } = await supabase.from('admin_notes').insert({
       inquiry_id: inquiry_id || null,
       order_id: order_id || null,
-      admin_id: admin.id,
+      admin_id: admin.admin.id,
       note: note.trim(),
     }).select('*, admins(full_name, email)').single()
 

@@ -302,8 +302,22 @@ export async function saveSession(state: ChatState): Promise<string> {
     conversationId = existing.id
     await supabase.from('conversations').update(conversationData).eq('id', existing.id)
   } else {
-    const { data: created } = await supabase.from('conversations').insert(conversationData).select('id').single()
-    conversationId = created!.id
+    const { data: created, error: createError } = await supabase
+  .from('conversations')
+  .insert(conversationData)
+  .select('id')
+  .single()
+
+if (createError) {
+  console.error('[CHATBOT] conversations INSERT ERROR:', createError)
+  throw createError
+}
+
+if (!created) {
+  throw new Error('[CHATBOT] conversations INSERT returned no data')
+}
+
+conversationId = created.id
   }
 
   // Save latest message
