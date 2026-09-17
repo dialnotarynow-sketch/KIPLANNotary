@@ -122,7 +122,7 @@ const detailedServices = [
     number: "05",
     title: "Document Certification",
     label: "Office Visit",
-    image: "/images/4 KIPLAN Scholar_ image.png",
+    image: "/images/Certification.png",
     imageAlt: "Official document certification",
     paragraphs: [
       "We provide document certification services for documents intended for official, embassy, visa, immigration, academic, and international use.",
@@ -159,12 +159,12 @@ function ServiceFeature({
           }`}
         >
           {/* FULL-HEIGHT IMAGE PANEL */}
-          <div className="relative w-full shrink-0 bg-warm-white sm:h-64 lg:h-auto lg:w-48 xl:w-56">
+          <div className="relative w-full shrink-0 bg-warm-white sm:h-64 lg:h-auto lg:w-72 xl:w-80">
             <Image
               src={service.image}
               alt={service.imageAlt}
               fill
-              sizes="(max-width: 1024px) 100vw, 224px"
+              sizes="(max-width: 1024px) 100vw, 320px"
               className="object-cover"
             />
           </div>

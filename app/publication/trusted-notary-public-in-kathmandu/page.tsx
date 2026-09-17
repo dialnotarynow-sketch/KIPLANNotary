@@ -4,6 +4,7 @@ import Image from "next/image"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import SectionReveal from "@/components/SectionReveal"
+import ArticleFAQ from "@/components/ArticleFAQ"
 import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -77,9 +78,26 @@ export default function TrustedNotaryKathmanduPage() {
                   service provider in Nepal.
                 </p>
 
-                <p className="mt-6 text-sm text-white/60">
-                  KIPLAN Notary · September 2026
-                </p>
+                <div className="mt-6 flex items-center justify-start gap-3">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/20">
+                    <Image
+                      src="/images/Adv Kamal.jpg"
+                      alt="Advocate / Notary Public Kamal Khadka"
+                      fill
+                      className="object-cover"
+                      sizes="56px"
+                    />
+                  </div>
+
+                  <div className="text-left text-sm text-white/60">
+                    <div className="font-medium text-white/80">
+                      Advocate / Notary Public Kamal Khadka
+                    </div>
+                    <div className="mt-0.5">
+                      November 2025
+                    </div>
+                  </div>
+                </div>
               </div>
             </SectionReveal>
           </div>
@@ -89,7 +107,7 @@ export default function TrustedNotaryKathmanduPage() {
         <article className="py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <SectionReveal>
-              <div className="text-[17px] leading-[1.2] text-justify text-gray-700">
+              <div className="text-[17px] leading-[1.30] text-justify text-gray-700">
                 {/* Introduction */}
                 <section>
                   <h2 className="text-2xl font-bold leading-tight text-deep-blue sm:text-3xl">
@@ -98,50 +116,45 @@ export default function TrustedNotaryKathmanduPage() {
 
                   <p className="mt-6">
                     When a document needs to be notarized, certified, verified, or
-                    prepared for official use, choosing an appropriate professional
-                    service provider is important. Many people search online for a{" "}
-                    <strong>Notary Public in Kathmandu</strong> when preparing
-                    documents for immigration, education, employment, business,
-                    court proceedings, marriage-related matters, or use outside
-                    Nepal.
+                    prepared for official use, choosing the right professional matters.
+                    People searching for a <strong>Notary Public in Kathmandu</strong>
+                    may need services for immigration, education, employment, business,
+                    court matters, marriage-related documents, or use outside Nepal.
                   </p>
 
                   <p className="mt-5">
-                    The large number of online listings can sometimes make it
-                    difficult to know which service is appropriate for a particular
-                    document. Websites may use terms such as "instant notarization,"
-                    "online notarization," or "fast document certification," but the
-                    service offered may not always match the legal or administrative
-                    requirements of the document's intended use.
+                    Online listings can be confusing. Terms such as "instant
+                    notarization" or "fast document certification" do not necessarily
+                    explain whether the service matches the document's actual
+                    requirements.
                   </p>
 
                   <p className="mt-5">
-                    This guide explains seven practical things you can check before
-                    choosing a notary service in Kathmandu or elsewhere in Nepal.
-                    The goal is not simply to find the fastest service, but to
-                    understand who is handling your documents, what service is
-                    actually required, and what steps may be necessary for your
-                    particular purpose.
+                    These seven practical checks can help you understand who is
+                    handling your documents, what service is required, and what steps
+                    may be necessary.
                   </p>
                 </section>
 
                 {/* Featured image */}
-          <figure className="mt-10 mb-12">
-  <div className="relative h-[664px] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm sm:h-[696px]">
-    <Image
-      src="/images/NP_Office.jpeg"
-      alt="Notary office providing professional document services in Kathmandu, Nepal"
-      fill
-      priority
-      sizes="(max-width: 640px) 100vw, 896px"
-      className="object-cover object-[50%_40%]"
-    />
-  </div>
+                <figure className="mt-10 mb-12">
+                  <div className="relative h-[664px] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm sm:h-[696px]">
+                    <Image
+                      src="/images/NP_Office.jpeg"
+                      alt="Notary office providing professional document services in Kathmandu, Nepal"
+                      fill
+                      priority
+                      sizes="(max-width: 640px) 100vw, 896px"
+                      className="object-cover object-[50%_40%]"
+                    />
+                  </div>
 
-  <figcaption className="mt-3 text-center text-sm text-gray-500">
-    A professional office environment can help clients verify where notarial and document services are being provided.
-  </figcaption>
-</figure>
+                  <figcaption className="mt-3 text-center text-sm text-gray-500">
+                    A professional office environment can help clients verify where
+                    notarial and document services are being provided.
+                  </figcaption>
+                </figure>
+
                 {/* Tip 1 */}
                 <section>
                   <h2 className="text-2xl font-bold leading-tight text-deep-blue sm:text-3xl">
@@ -149,28 +162,16 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    One of the first things to check when choosing a{" "}
-                    <strong>Notary Public in Kathmandu</strong> is the professional
-                    information provided by the service provider. A reliable office
-                    should be transparent about the professional responsible for
-                    the service and the nature of the notarial work being offered.
+                    Check who is responsible for the service and whether the office
+                    clearly identifies its professional role. The{" "}
+                    <strong>Notary Public Act, 2063 (2007)</strong> provides the legal
+                    framework for notarial practice in Nepal.
                   </p>
 
                   <p className="mt-5">
-                    Nepal has a specific legal framework governing notarial
-                    services. The{" "}
-                    <strong>Notary Public Act, 2063 (2007)</strong> provides the
-                    statutory framework for notarial practice in Nepal. Before
-                    proceeding with an important document, clients should therefore
-                    take reasonable steps to understand who is providing the
-                    service and what authority or professional responsibility
-                    applies to the transaction.
-                  </p>
-
-                  <p className="mt-5">
-                    A professional website should make it possible to identify the
-                    office, its services, and relevant professional information
-                    without relying solely on advertising claims.
+                    A professional website should clearly identify the office, its
+                    services, and relevant professional information rather than relying
+                    only on advertising claims.
                   </p>
                 </section>
 
@@ -181,26 +182,16 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    A clear physical office address is another useful indicator when
-                    comparing <strong>notary services in Nepal</strong>. Clients
-                    should be able to identify where the service is being provided
-                    and how to contact the office if questions arise after the
-                    document has been completed.
+                    A clearly identified physical office helps clients understand where
+                    the service is provided and how to contact the provider. Look for an
+                    office address, telephone number, email address, and useful office
+                    information.
                   </p>
 
                   <p className="mt-5">
-                    When reviewing a website, look for a complete office address,
-                    telephone number, email address, office hours, and other useful
-                    contact information. Office photographs and information about
-                    the professional team can also help a client understand the
-                    nature of the service provider.
-                  </p>
-
-                  <p className="mt-5">
-                    This does not mean that a website must have a large office or an
-                    elaborate online presence. The important point is transparency:
-                    the client should be able to understand who is providing the
-                    service and where the office operates.
+                    The issue is not the size of the office. What matters is
+                    transparency about who provides the service and where the office
+                    operates.
                   </p>
                 </section>
 
@@ -211,39 +202,28 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    Not every document requires the same type of service. Depending
-                    on the document and its purpose, you may need document
-                    certification, copy verification, a sworn document, official
-                    translation, marriage-related document services, or another
-                    form of professional assistance.
+                    Not every document requires the same service. Depending on the
+                    document and purpose, you may need document certification, copy
+                    verification, a sworn document, official translation,
+                    marriage-related services, or another procedure.
                   </p>
 
                   <p className="mt-5">
-                    This is particularly important when documents are being prepared
-                    for use outside Nepal. A translation, for example, may involve
-                    different requirements from the certification of a copy of an
-                    existing document.
-                  </p>
-
-                  <p className="mt-5">
-                    Before paying for a service, explain what the document will be
-                    used for and where it will be submitted. This allows the service
-                    provider to explain what can be done and whether additional
-                    authentication or documentation may be required.
+                    Before paying, explain where the document will be used and what it
+                    is for. This gives the service provider an opportunity to explain
+                    whether additional documentation or authentication may be required.
                   </p>
 
                   <div className="mt-7 rounded-2xl border border-gray-200 bg-warm-white p-6">
                     <div className="flex items-start gap-4">
                       <CheckCircle2 className="mt-1 h-6 w-6 shrink-0 text-deep-blue" />
-
                       <div>
                         <h3 className="text-lg font-bold text-deep-blue">
                           A simple question to ask
                         </h3>
-
                         <p className="mt-2 text-gray-700">
-                          Explain the purpose and destination of your document and
-                          ask the office what type of service is appropriate.
+                          Explain the document's purpose and destination and ask which
+                          service is appropriate.
                         </p>
                       </div>
                     </div>
@@ -257,24 +237,15 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    A professional notarial service should not be a mystery to the
-                    client. Before proceeding, ask what documents you need to bring,
-                    what identification is required, whether original documents
+                    Ask what documents and identification you need, whether originals
                     must be presented, and what steps will be followed.
                   </p>
 
                   <p className="mt-5">
-                    Depending on the service, the process may involve reviewing the
-                    document, verifying identity, completing the relevant records,
-                    signing or witnessing where applicable, and applying the
-                    appropriate notarial certification.
-                  </p>
-
-                  <p className="mt-5">
-                    The exact procedure can vary depending on the nature of the
-                    document and the service required. That is why it is better to
-                    discuss the actual document with the notary rather than relying
-                    on a generic online checklist.
+                    Depending on the service, the process may include document review,
+                    identity verification, relevant records, signing or witnessing
+                    where applicable, and the appropriate notarial certification.
+                    Exact requirements depend on the document and service.
                   </p>
                 </section>
 
@@ -302,18 +273,14 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    Online search results can include services that promise very
-                    fast document processing or "instant" notarization. Speed can
-                    be useful, but it should not replace proper document review,
-                    identity verification, and professional responsibility.
+                    Fast processing can be useful, but it should not replace document
+                    review, identity verification, or professional responsibility.
                   </p>
 
                   <p className="mt-5">
-                    Be especially careful if a website does not clearly identify the
-                    professional providing the service, does not provide a physical
-                    office address, does not explain its process, or asks you to
-                    send sensitive documents without giving clear information about
-                    how those documents will be handled.
+                    Be cautious when a website does not clearly identify the
+                    professional, physical office, process, or handling of sensitive
+                    documents.
                   </p>
 
                   <div className="mt-7 rounded-2xl border border-red-100 bg-red-50 p-6">
@@ -324,34 +291,19 @@ export default function TrustedNotaryKathmanduPage() {
                     <ul className="mt-4 space-y-3">
                       <li className="flex gap-3">
                         <span className="font-bold text-deep-blue">•</span>
-                        <span>
-                          No clear information about the professional providing the
-                          service.
-                        </span>
+                        <span>No clear information about the professional.</span>
                       </li>
-
                       <li className="flex gap-3">
                         <span className="font-bold text-deep-blue">•</span>
-                        <span>
-                          No identifiable physical office or reliable contact
-                          information.
-                        </span>
+                        <span>No identifiable office or reliable contact information.</span>
                       </li>
-
                       <li className="flex gap-3">
                         <span className="font-bold text-deep-blue">•</span>
-                        <span>
-                          Unusually broad promises without explaining the actual
-                          procedure.
-                        </span>
+                        <span>Broad promises without explaining the procedure.</span>
                       </li>
-
                       <li className="flex gap-3">
                         <span className="font-bold text-deep-blue">•</span>
-                        <span>
-                          Requests for sensitive documents without clear information
-                          about their handling.
-                        </span>
+                        <span>Requests for sensitive documents without clear handling information.</span>
                       </li>
                     </ul>
                   </div>
@@ -364,24 +316,15 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    Pricing is another practical factor when choosing{" "}
-                    <strong>professional notarial services in Kathmandu</strong>.
-                    The total cost can depend on the document, the service required,
-                    the number of documents or copies, and whether related services
-                    such as translation or drafting are involved.
+                    The cost of <strong>professional notarial services in Kathmandu</strong>
+                    can depend on the document, service, number of copies, and related
+                    work such as translation or drafting.
                   </p>
 
                   <p className="mt-5">
-                    A reliable service provider should be able to explain the
-                    applicable charges before the work proceeds. Ask whether the
-                    quoted amount covers the complete service or whether separate
-                    charges may apply.
-                  </p>
-
-                  <p className="mt-5">
-                    Clear communication about fees helps prevent misunderstandings
-                    and allows clients to compare services based on both price and
-                    professional quality.
+                    Ask what is included in the quoted amount and whether separate
+                    charges may apply. Clear communication about fees helps prevent
+                    misunderstandings.
                   </p>
                 </section>
 
@@ -392,24 +335,21 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    One of the most important questions is not simply "Does this
-                    document need notarization?" but rather{" "}
-                    <strong>“Where will this document be used?”</strong>
+                    Ask not only whether a document needs notarization, but also{" "}
+                    <strong>where it will be used</strong>.
                   </p>
 
                   <p className="mt-5">
-                    A document intended for a government office in Nepal may have
-                    different requirements from a document being submitted to a
+                    Requirements may differ between a Nepal government office and a
                     foreign university, embassy, immigration authority, employer,
                     court, or financial institution.
                   </p>
 
                   <p className="mt-5">
-                    If the document is intended for use outside Nepal, ask the
-                    receiving institution or relevant authority what form of
-                    certification, authentication, translation, or legalization is
-                    required. Notarization alone does not automatically guarantee
-                    acceptance by every foreign authority.
+                    For use outside Nepal, check with the receiving authority about
+                    certification, authentication, translation, or legalization.
+                    Notarization alone does not guarantee acceptance by every foreign
+                    authority.
                   </p>
                 </section>
 
@@ -420,44 +360,21 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    The documents and services handled by a notary can vary
-                    depending on the purpose of the transaction. Examples may
-                    include:
+                    Depending on the purpose, notarial services may involve:
                   </p>
 
                   <ul className="mt-6 space-y-3 pl-5">
-                    <li className="list-disc">
-                      Copies of official or personal documents requiring
-                      verification.
-                    </li>
-
-                    <li className="list-disc">
-                      Sworn documents, declarations, and related statements.
-                    </li>
-
-                    <li className="list-disc">
-                      Documents requiring certification for official use.
-                    </li>
-
-                    <li className="list-disc">
-                      Documents requiring official translation or translation-related
-                      certification.
-                    </li>
-
-                    <li className="list-disc">
-                      Marriage-related documents and supporting documentation.
-                    </li>
-
-                    <li className="list-disc">
-                      Documents intended for submission to authorities or
-                      institutions outside Nepal.
-                    </li>
+                    <li className="list-disc">Copies requiring verification.</li>
+                    <li className="list-disc">Sworn documents and declarations.</li>
+                    <li className="list-disc">Documents requiring certification.</li>
+                    <li className="list-disc">Official translation or related certification.</li>
+                    <li className="list-disc">Marriage-related documents.</li>
+                    <li className="list-disc">Documents intended for use outside Nepal.</li>
                   </ul>
 
                   <p className="mt-5">
                     The appropriate service depends on the actual document and its
-                    intended purpose. If you are unsure, it is better to ask before
-                    preparing or submitting the document.
+                    purpose. If unsure, ask before preparing or submitting it.
                   </p>
                 </section>
 
@@ -472,25 +389,21 @@ export default function TrustedNotaryKathmanduPage() {
                       </h2>
 
                       <p className="mt-6">
-                        If you are searching for a{" "}
-                        <strong>Notary Public in Kathmandu</strong>, consider
-                        choosing an office that clearly explains its professional
-                        services, provides identifiable contact information, and
-                        takes time to understand the purpose of your documents.
+                        If you are searching for a <strong>Notary Public in Kathmandu</strong>,
+                        look for an identifiable office that clearly explains its
+                        services and understands the purpose of your documents.
                       </p>
 
                       <p className="mt-5">
                         KIPLAN Notary provides professional notarial and document
-                        services in Kathmandu, Nepal, with services covering
-                        document certification, copy verification, sworn documents,
-                        official document translation, marriage-related
-                        documentation, and other document services.
+                        services in Kathmandu, including document certification, copy
+                        verification, sworn documents, official translation, and
+                        marriage-related documentation.
                       </p>
 
                       <p className="mt-5">
-                        If you are unsure which service your document requires, you
-                        can contact the office and explain your document and its
-                        intended purpose before proceeding.
+                        If you are unsure which service you need, contact the office
+                        and explain your document and its intended purpose.
                       </p>
                     </div>
                   </div>
@@ -503,8 +416,7 @@ export default function TrustedNotaryKathmanduPage() {
                   </h2>
 
                   <p className="mt-6">
-                    If you would like to understand the subject in more detail,
-                    these KIPLAN Notary publications may also be useful:
+                    These KIPLAN Notary publications provide further information:
                   </p>
 
                   <div className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -517,8 +429,8 @@ export default function TrustedNotaryKathmanduPage() {
                       </h3>
 
                       <p className="mt-3 text-base leading-relaxed text-gray-600">
-                        Learn about common notarial services and when you may need
-                        a Notary Public.
+                        Learn about common notarial services and when you may need a
+                        Notary Public.
                       </p>
 
                       <span className="mt-4 inline-flex items-center gap-2 font-semibold text-deep-blue">
@@ -536,8 +448,8 @@ export default function TrustedNotaryKathmanduPage() {
                       </h3>
 
                       <p className="mt-3 text-base leading-relaxed text-gray-600">
-                        Understand document notarization, certification, copy
-                        verification, and the general process.
+                        Understand notarization, certification, copy verification, and
+                        the general process.
                       </p>
 
                       <span className="mt-4 inline-flex items-center gap-2 font-semibold text-deep-blue">
@@ -557,31 +469,19 @@ export default function TrustedNotaryKathmanduPage() {
                   <p className="mt-6">
                     KIPLAN Notary is the notarial division of KIPLAN and provides
                     professional document and notarial services in Kathmandu.
-                    Depending on the client's needs, services include:
                   </p>
 
                   <ul className="mt-6 space-y-3 pl-5">
-                    <li className="list-disc">
-                      Official Document Translation
-                    </li>
-
-                    <li className="list-disc">
-                      Marriage Law Translation &amp; Certification
-                    </li>
-
+                    <li className="list-disc">Official Document Translation</li>
+                    <li className="list-disc">Marriage Law Translation &amp; Certification</li>
                     <li className="list-disc">Copy Verification</li>
-
                     <li className="list-disc">Sworn Document</li>
-
                     <li className="list-disc">Document Certification</li>
-
-                    <li className="list-disc">
-                      Court Marriage Registration
-                    </li>
+                    <li className="list-disc">Court Marriage Registration</li>
                   </ul>
 
                   <p className="mt-6">
-                    You can explore the full range of services on the{" "}
+                    Explore the full range of services on the{" "}
                     <Link
                       href="/services/"
                       className="font-semibold text-deep-blue underline underline-offset-4"
@@ -589,6 +489,143 @@ export default function TrustedNotaryKathmanduPage() {
                       KIPLAN Notary Services
                     </Link>{" "}
                     page.
+                  </p>
+                </section>
+
+                {/* FAQs */}
+                <ArticleFAQ
+                  items={[
+                    {
+                      question:
+                        "How can I make sure I am dealing with a genuine Notary Public online or in person?",
+                      answer: (
+                        <p>
+                          Whether you contact a Notary Public online or visit an
+                          office physically, take reasonable steps to verify who is
+                          providing the service. Check the professional's name,
+                          credentials, physical office, website, office
+                          photographs, professional profile, and contact details.
+                          Before submitting important documents or making payment,
+                          make sure you have the Notary Public's office address,
+                          telephone number, and email address. Where appropriate,
+                          identifying details should also be available on the
+                          notarized or certified document, such as in the notarial
+                          certificate, stamp, seal, or footer. Requirements vary by
+                          jurisdiction and receiving institution. For example,
+                          GOV.UK guidance for certified copies states that the
+                          certifier should add their name, occupation, address, and
+                          telephone number to the document.
+                          {" "}
+                          <a
+                            href="https://www.gov.uk/certifying-a-document"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-deep-blue underline underline-offset-4"
+                          >
+                            GOV.UK guidance
+                          </a>
+                          .
+                        </p>
+                      ),
+                    },
+                    {
+                      question:
+                        "How can I verify a Notary Public's professional credentials?",
+                      answer: (
+                        <p>
+                          Look for clear information identifying the Notary Public,
+                          their professional designation, and the notarial services
+                          they provide. Where possible, verify the information
+                          independently rather than relying only on advertising or
+                          social media profiles.
+                        </p>
+                      ),
+                    },
+                    {
+                      question:
+                        "Why is a physical office important when choosing a Notary Public?",
+                      answer: (
+                        <p>
+                          A clearly identified physical office gives clients a
+                          practical way to understand where the service is provided
+                          and how to contact the professional if questions arise.
+                          An office address, contact information, and professional
+                          profile can also help distinguish an identifiable service
+                          provider from an online contact point.
+                        </p>
+                      ),
+                    },
+                    {
+                      question:
+                        "What should I check before submitting my documents?",
+                      answer: (
+                        <p>
+                          Confirm the identity of the Notary Public, the service
+                          required, the documents and identification you need to
+                          provide, the process, applicable fees, and how your
+                          documents will be handled. Avoid submitting sensitive
+                          documents until you understand who is responsible for the
+                          service.
+                        </p>
+                      ),
+                    },
+                    {
+                      question:
+                        "How can I know which notarial service my document requires?",
+                      answer: (
+                        <p>
+                          Explain what the document is, why you need it, and where it
+                          will be submitted. Depending on the circumstances, you may
+                          need document certification, copy verification, a sworn
+                          document, translation, or another procedure. The
+                          requirements should be considered in light of the
+                          document's actual purpose.
+                        </p>
+                      ),
+                    },
+                    {
+                      question:
+                        "Should I ask about fees before proceeding with a notarial service?",
+                      answer: (
+                        <p>
+                          Yes. Ask the office to explain the applicable charges
+                          before the work proceeds and whether additional charges may
+                          apply. The cost can depend on the document, service,
+                          number of copies, and any related services.
+                        </p>
+                      ),
+                    },
+                    {
+                      question:
+                        "Is notarization enough for documents intended for use outside Nepal?",
+                      answer: (
+                        <p>
+                          Not necessarily. A foreign university, embassy,
+                          immigration authority, government office, employer, or
+                          other receiving institution may require additional
+                          verification, authentication, attestation, translation,
+                          or legalization. Always check the current requirements of
+                          the authority or institution receiving the document.
+                        </p>
+                      ),
+                    },
+                  ]}
+                />
+
+                {/* Disclaimer */}
+                <section className="mt-12 border-t border-gray-200 pt-8">
+                  <h2 className="text-xl font-bold text-deep-blue">
+                    Important Note
+                  </h2>
+
+                  <p className="mt-4 text-sm leading-relaxed text-gray-500">
+                    This article is provided for general informational and
+                    educational purposes only. Notarial requirements can vary
+                    depending on the document, transaction, receiving authority,
+                    and intended use. Information and procedures may also change
+                    over time. Readers should obtain appropriate professional or
+                    official guidance for their specific circumstances before
+                    relying on any information in this article.
                   </p>
                 </section>
 
@@ -603,7 +640,7 @@ export default function TrustedNotaryKathmanduPage() {
                     contact KIPLAN Notary and explain the purpose of your document.
                   </p>
 
-                  <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+                  <div className="mt-7 flex flex-col justify-start gap-3 sm:flex-row">
                     <Link
                       href="/contact/"
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-deep-blue transition-colors hover:bg-gray-100"
@@ -622,22 +659,6 @@ export default function TrustedNotaryKathmanduPage() {
                   </div>
                 </section>
 
-                {/* Disclaimer */}
-                <section className="mt-12 border-t border-gray-200 pt-8">
-                  <h2 className="text-xl font-bold text-deep-blue">
-                    Important Note
-                  </h2>
-
-                  <p className="mt-4 text-sm leading-relaxed text-gray-500">
-                    This article is provided for general informational and
-                    educational purposes only. Notarial requirements can vary
-                    depending on the document, transaction, receiving authority,
-                    and intended use. Information and procedures may also change
-                    over time. Readers should obtain appropriate professional or
-                    official guidance for their specific circumstances before
-                    relying on any information in this article.
-                  </p>
-                </section>
               </div>
             </SectionReveal>
           </div>

@@ -4,6 +4,7 @@ import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import SectionReveal from "@/components/SectionReveal"
+import ArticleFAQ from "@/components/ArticleFAQ"
 import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -36,8 +37,25 @@ export default function NotaryPublicNepalArticle() {
                 translation in Nepal.
               </p>
 
-              <div className="mt-6 text-sm text-white/50">
-                KIPLAN Notary · September 2026
+              <div className="mt-6 flex items-center gap-3">
+                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/20">
+                  <Image
+                    src="/images/Adv Babita Karki.png"
+                    alt="Advocate / Notary Public Babita Karki"
+                    fill
+                    className="object-cover"
+                    sizes="56px"
+                  />
+                </div>
+
+                <div className="text-sm text-white/60">
+                  <div className="font-medium text-white/80">
+                    Advocate / Notary Public Babita Karki
+                  </div>
+                  <div className="mt-0.5">
+                    August 2024
+                  </div>
+                </div>
               </div>
             </SectionReveal>
           </div>
@@ -50,7 +68,7 @@ export default function NotaryPublicNepalArticle() {
               <div className="max-w-none">
 
                 {/* Opening */}
-                <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                   <p>
                     Many people in Nepal encounter the term “Notary Public”
                     when preparing documents for education, employment,
@@ -83,7 +101,7 @@ export default function NotaryPublicNepalArticle() {
                     Looking for Professional Notarial Services in Kathmandu?
                   </h2>
 
-                  <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                     <p>
                       If you are looking for a professional Notary Public in
                       Kathmandu, you do not need to navigate the process alone.
@@ -140,7 +158,7 @@ export default function NotaryPublicNepalArticle() {
                     What Is a Notary Public?
                   </h2>
 
-                  <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                     <p>
                       A Notary Public is a person authorized to perform
                       specified notarial functions under the applicable law
@@ -160,6 +178,40 @@ export default function NotaryPublicNepalArticle() {
                   </div>
                 </section>
 
+                {/* Things to Remember */}
+                <section className="mt-10 rounded-2xl border border-blue-100 bg-blue-50/70 p-6 sm:p-8">
+                  <h2 className="text-xl sm:text-2xl font-bold text-deep-blue mb-4">
+                    Things to Remember
+                  </h2>
+                  <p className="text-[16px] sm:text-[17px] leading-relaxed text-gray-700">
+                    Notarial work involves legal records and professional responsibilities. Under Sections 22, 23 and 24 of the Notary Public Act, 2063, a Notary Public must maintain an identifiable office, prescribed register books, and separate office files relating to certified or translated documents. The law also requires the document-certification register to be safely preserved for five years from the date its last page is completed.
+                  </p>
+                  <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-gray-700">
+                    These requirements help explain why a proper notarial process may involve recording the applicant's identity, document details, purpose, destination, and other relevant information. Completing an application is therefore not simply an extra formality; it can be part of maintaining the records and information required for professional notarial work.
+                  </p>
+                </section>
+
+                {/* Your Right to Verify */}
+                <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm">
+                  <h2 className="text-xl sm:text-2xl font-bold text-deep-blue mb-4">
+                    Your Right to Verify
+                  </h2>
+                  <p className="text-[16px] sm:text-[17px] leading-relaxed text-gray-700">
+                    Before using notarial services, clients can check whether
+                    the person is authorized to work as a Notary Public. The
+                    Notary Public Act requires the notary's office to display
+                    the notary's name and certificate number on its signboard,
+                    and the certificate must also be displayed inside the
+                    office.
+                  </p>
+                  <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-gray-700">
+                    The certificate also specifies the district in which the
+                    Notary Public is authorized to work. These requirements
+                    provide a practical way for clients to identify and verify
+                    the notary before proceeding with a notarial service.
+                  </p>
+                </section>
+
                 {/* Common Services */}
                 <section className="mt-12">
                   <h2 className="text-2xl sm:text-3xl font-bold leading-tight text-deep-blue mb-7">
@@ -173,7 +225,7 @@ export default function NotaryPublicNepalArticle() {
                         1. Document Certification
                       </h3>
 
-                      <div className="space-y-4 text-[17px] leading-[1.20] text-justify text-gray-700">
+                      <div className="space-y-4 text-[17px] leading-[1.30] text-justify text-gray-700">
                         <p>
                           Documents may need certification when they are being
                           submitted to an institution, authority,
@@ -207,7 +259,7 @@ export default function NotaryPublicNepalArticle() {
                         2. Copy Verification
                       </h3>
 
-                      <div className="space-y-4 text-[17px] leading-[1.20] text-justify text-gray-700">
+                      <div className="space-y-4 text-[17px] leading-[1.30] text-justify text-gray-700">
                         <p>
                           A person may sometimes need a certified copy instead
                           of submitting an original document. Copy verification
@@ -228,7 +280,7 @@ export default function NotaryPublicNepalArticle() {
                         3. Sworn Documents and Declarations
                       </h3>
 
-                      <div className="space-y-4 text-[17px] leading-[1.20] text-justify text-gray-700">
+                      <div className="space-y-4 text-[17px] leading-[1.30] text-justify text-gray-700">
                         <p>
                           Some matters require a person to make a formal
                           declaration or sworn statement. A notary may perform
@@ -251,7 +303,7 @@ export default function NotaryPublicNepalArticle() {
                         4. Official Document Translation
                       </h3>
 
-                      <div className="space-y-4 text-[17px] leading-[1.20] text-justify text-gray-700">
+                      <div className="space-y-4 text-[17px] leading-[1.30] text-justify text-gray-700">
                         <p>
                           Documents prepared in one language may need to be
                           translated before they can be submitted to an
@@ -285,7 +337,7 @@ export default function NotaryPublicNepalArticle() {
                         5. Marriage-Related Documents
                       </h3>
 
-                      <div className="space-y-4 text-[17px] leading-[1.20] text-justify text-gray-700">
+                      <div className="space-y-4 text-[17px] leading-[1.30] text-justify text-gray-700">
                         <p>
                           Marriage certificates and related documents are
                           frequently required for immigration, visa
@@ -307,7 +359,7 @@ export default function NotaryPublicNepalArticle() {
                         6. Other Notarial and Document Services
                       </h3>
 
-                      <p className="text-[17px] leading-[1.20] text-justify text-gray-700">
+                      <p className="text-[17px] leading-[1.30] text-justify text-gray-700">
                         Notarial requirements can arise in many situations
                         involving personal, academic, professional, commercial,
                         and legal documents. The appropriate procedure depends
@@ -324,7 +376,7 @@ export default function NotaryPublicNepalArticle() {
                     When Might You Need a Notary?
                   </h2>
 
-                  <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                     <p>
                       You may need notarial services when an authority,
                       institution, organization, employer, educational
@@ -349,7 +401,7 @@ export default function NotaryPublicNepalArticle() {
                     Documents for Use Outside Nepal
                   </h2>
 
-                  <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                     <p>
                       Documents intended for use outside Nepal may involve
                       additional requirements beyond ordinary document
@@ -387,7 +439,7 @@ export default function NotaryPublicNepalArticle() {
                     What Should You Bring?
                   </h2>
 
-                  <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                     <p>
                       The documents required will depend on the service
                       requested. Applicants should normally bring the relevant
@@ -410,7 +462,7 @@ export default function NotaryPublicNepalArticle() {
                     Why the Purpose of the Document Matters
                   </h2>
 
-                  <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                     <p>
                       The same document can require different treatment
                       depending on where it will be submitted. A document
@@ -434,7 +486,7 @@ export default function NotaryPublicNepalArticle() {
                     KIPLAN Notary
                   </h2>
 
-                  <div className="space-y-5 text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <div className="space-y-5 text-[17px] leading-[1.30] text-justify text-gray-700">
                     <p>
                       KIPLAN Notary provides professional notarial and
                       document services in Kathmandu, Nepal, with an emphasis
@@ -470,7 +522,7 @@ export default function NotaryPublicNepalArticle() {
                     Need help with a document?
                   </h3>
 
-                  <p className="mt-3 text-[17px] leading-[1.20] text-justify text-gray-600">
+                  <p className="mt-3 text-[17px] leading-[1.30] text-justify text-gray-600">
                     If you are unsure which notarial or document service you
                     need, you can contact KIPLAN Notary and provide the
                     document details and its intended purpose.
@@ -494,13 +546,107 @@ export default function NotaryPublicNepalArticle() {
                   </div>
                 </div>
 
+                {/* Frequently Asked Questions */}
+                <ArticleFAQ
+                  items={[
+                    {
+                      question: "What does a Notary Public do in Nepal?",
+                      answer: (
+                        <>
+                          A Notary Public performs specified notarial functions
+                          such as document certification, copy verification,
+                          sworn documents and declarations, and other
+                          authorized document-related services. The appropriate
+                          notarial act depends on the document and its intended
+                          purpose.
+                        </>
+                      ),
+                    },
+                    {
+                      question: "What services can a Notary Public provide?",
+                      answer: (
+                        <>
+                          Common services include document certification, copy
+                          verification, sworn documents and declarations,
+                          official document translation, marriage-related
+                          document services, and other notarial and document
+                          services where applicable.
+                        </>
+                      ),
+                    },
+                    {
+                      question: "When might I need a Notary Public?",
+                      answer: (
+                        <>
+                          You may need notarial services when a document,
+                          declaration, copy, translation, or other record must
+                          be certified, verified, formalized, or prepared for
+                          submission to an institution, authority,
+                          organization, or other recipient.
+                        </>
+                      ),
+                    },
+                    {
+                      question: "What documents should I bring to a Notary Public?",
+                      answer: (
+                        <>
+                          You should bring the document requiring the notarial
+                          service and any identification or supporting
+                          documents that may be relevant. The exact
+                          requirements depend on the type of document and the
+                          purpose for which it will be used.
+                        </>
+                      ),
+                    },
+                    {
+                      question: "Why does the purpose of a document matter?",
+                      answer: (
+                        <>
+                          The appropriate notarial or document service can
+                          depend on how and where the document will be used.
+                          Explaining the purpose and destination helps the
+                          notary understand what type of service may be
+                          appropriate.
+                        </>
+                      ),
+                    },
+                    {
+                      question: "Do documents for use outside Nepal require additional procedures?",
+                      answer: (
+                        <>
+                          They may. Documents intended for use outside Nepal
+                          can involve additional requirements depending on the
+                          receiving institution, destination country, and type
+                          of document. The required procedure should therefore
+                          be confirmed for the particular document and its
+                          intended use.
+                        </>
+                      ),
+                    },
+                    {
+                      question: "What is the difference between document certification and copy verification?",
+                      answer: (
+                        <>
+                          They are different notarial services. Document
+                          certification concerns certification of a document
+                          according to the applicable procedure, while copy
+                          verification concerns verification of a copy against
+                          the relevant original or document. The appropriate
+                          service depends on what the receiving authority
+                          requires.
+                        </>
+                      ),
+                    },
+                  ]}
+                />
+
                 {/* Important Note */}
                 <section className="mt-12">
-                  <h2 className="text-2xl sm:text-3xl font-bold leading-tight text-deep-blue mb-5">
+                  <h2 className="text-lg sm:text-xl font-bold leading-tight text-deep-blue mb-4">
                     Important Note
                   </h2>
 
-                  <p className="text-[17px] leading-[1.20] text-justify text-gray-700">
+                  <p className="text-[15px] leading-[1.30] text-justify text-gray-700">
                     This article is provided for general informational
                     purposes. Notarial requirements can vary according to the
                     document, transaction, receiving institution, destination
