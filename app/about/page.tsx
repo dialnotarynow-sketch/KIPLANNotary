@@ -19,7 +19,7 @@ const team = [
   name: "Kamal Khadka",
   qualification: "MA (HRM), Australia · LL.M. (TU)",
   designation: "Advocate · Notary Public",
-  image: "/images/Adv Kamal.jpg",
+  image: "/images/Adv kamal.jpg",
   href: "/about/team/kamal-khadka",
 },
   {
@@ -204,11 +204,12 @@ export default function AboutPage() {
                     <div className="flex items-center gap-4">
                       <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full bg-light-blue">
                         <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover"
-                        />
+  src={member.image}
+  alt={member.name}
+  fill
+  className="object-cover"
+/>
+                    
                       </div>
 
                       <div className="min-w-0">

@@ -11,7 +11,7 @@ export default function KamalKhadkaPage() {
             {/* Profile Image */}
             <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-full bg-white shadow-sm">
               <Image
-                src="/images/Adv Kamal.jpg"
+                src="/images/Adv kamal.jpg"
                 alt="Kamal Khadka"
                 fill
                 className="object-cover"
