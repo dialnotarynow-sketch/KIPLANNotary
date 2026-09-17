@@ -81,7 +81,7 @@ export default function TrustedNotaryKathmanduPage() {
                 <div className="mt-6 flex items-center justify-start gap-3">
                   <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/20">
                     <Image
-                      src="/images/Adv Kamal.jpg"
+                      src="/images/Adv kamal.jpg"
                       alt="Advocate / Notary Public Kamal Khadka"
                       fill
                       className="object-cover"
